@@ -1,0 +1,12 @@
+<div class="component">
+    <div class="resultPanel" (click)="toggleMenu()">
+    <div> {{category}} </div>
+    <div class="result">{{selectedItem}} </div></div>
+    <div class="menu {{toggle}}" [@menuState]="state">
+        <ul class="items">
+            <li *ngFor="let movie of movies" (click)="onSelect(movie)" class="item">
+                <span>{{movie.title}}</span></li>
+        </ul>
+    </div>
+        <span (click)="onClear()" class="btnClear {{showClear}}">clear</span>
+</div>
